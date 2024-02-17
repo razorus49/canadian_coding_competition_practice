@@ -4,10 +4,6 @@ using namespace std;
 
 
 int main(){
-
-    // freopen("traffic.in", "r" , stdin);
-    // freopen("traffic.out", "w", stdout);
-
     map<int, int> ans;
     map<int, int> last_seen;
     set<int> replied;
@@ -48,12 +44,9 @@ int main(){
 
     auto it = ans.begin();
     while(it!=ans.end()){
-        // for(int num: replied){
-        //     if(num == it->first) cout << it->first << " -1" << endl; ++it;continue;
-        // }
         int num = it->first;
         auto k=replied.find(num);
-        if(k==replied.end())        cout << it->first << " " << it->second << endl;
+        if(k==replied.end())        cout << it->first << " " << it->second << endl; // not in the list of unreplied numbers
         else cout << it->first << " -1" << endl;
 
         ++it;
